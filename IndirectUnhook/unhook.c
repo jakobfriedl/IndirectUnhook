@@ -60,7 +60,7 @@ BOOL ReadNtdllFromSuspendedProcess(IN PNTAPI_FUNC Nt, OUT PVOID* ppNtdllBuf) {
     Si.cb = sizeof(STARTUPINFO);
 
     // Use NtCreateUserProcess to create a suspended process
-    INFO_W(L"Creating suspended process %s...", TARGET_PROCESS); 
+    INFO_W(L"Creating suspended process %s...", PROCESS_PARAMS); 
     if (!NtCreateSuspendedProcess(Nt, TARGET_PROCESS, PROCESS_PARAMS, PROCESS_PATH, &hProcess, &hThread)) {
         PRINT_ERROR("NtCreateSuspendedProcess"); 
         goto CLEANUP; 
